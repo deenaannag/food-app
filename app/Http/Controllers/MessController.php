@@ -14,9 +14,9 @@ use DB;
 
 class MessController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return view('home');
+        return view('index');
     }
 
     public function login(Request $req)

@@ -19,7 +19,7 @@ use App\Http\Controllers\MessController;
   //  return view('welcome');
 //});
 
-Route::view('','home');
+Route::view('/','index');
 Route::view('login','studentlogin');
 Route::view('admin','admin');
 Route::view('addfood','admin');
@@ -33,7 +33,7 @@ Route::post('login',[MessController::class,'login']);
 Route::view('signup','signup');
 Route::post('signup',[MessController::class,'register']);
 Route::post('addfood',[MessController::class,'addfood']);
-Route::get('', [Messcontroller::class,'home']);
+Route::get('/', [Messcontroller::class,'index']);
 
 
 Route::get('addfoodview',[MessController::class,'addfoodview']);
