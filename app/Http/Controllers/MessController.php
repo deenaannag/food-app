@@ -63,7 +63,7 @@ class MessController extends Controller
         $data=new User();
         $data->email=$req->email;
         $data->password=Hash::make($req->password);
-        $data->usertpe="user";
+        $data->usertpe='admin';
         $query=$data->save();
         if($query)
         {
