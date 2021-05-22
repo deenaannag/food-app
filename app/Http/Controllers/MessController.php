@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
 use App\reg;
 use App\models\user;
-use Illuminate\Support\facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\signup;
 use App\Models\addfood;
 use App\Models\Booking;
