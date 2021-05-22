@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
 use App\reg;
-//use App\models\User;
+use App\models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\signup;
 use App\Models\addfood;
@@ -60,7 +60,7 @@ class MessController extends Controller
           'password'=>'required|min:5|max:12'
           ]);
     
-        $data=new User() ;
+        $data=new User();
         $data->email=$req->email;
         $data->password=Hash::make($req->password);
         $data->usertpe='user';
