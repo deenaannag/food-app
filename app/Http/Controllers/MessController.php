@@ -60,7 +60,7 @@ class MessController extends Controller
           'password'=>'required|min:5|max:12'
           ]);
     
-        $data=new User ;
+        $data=new User() ;
         $data->email=$req->email;
         $data->password=Hash::make($req->password);
         $data->usertpe='user';
