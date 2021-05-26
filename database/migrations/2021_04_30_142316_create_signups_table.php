@@ -20,6 +20,7 @@ class CreateSignupsTable extends Migration
             $table->string('email');
             $table->integer('mobile');
             $table->string('address');
+            $table->integer('login_id');
             $table->string('password');
             $table->string('createpassword');
 
