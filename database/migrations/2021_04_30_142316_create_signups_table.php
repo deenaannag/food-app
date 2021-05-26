@@ -18,7 +18,7 @@ class CreateSignupsTable extends Migration
             $table->timestamps();
             $table->string('username');
             $table->string('email');
-            $table->integer('mobile');
+            $table->number('mobile');
             $table->string('address');
             $table->integer('login_id');
             $table->string('password');
