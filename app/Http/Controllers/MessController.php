@@ -192,7 +192,7 @@ class MessController extends Controller
         $food=addfood::where('id',$id)->first();
         Booking::insert([
             'orderno'=>$order_no,
-            'orderdate'=>date('y/m/d'),
+            'orderdate'=>date('Y-m-d'),
             'itemno'=>$food->itemno,
             'price'=>$food->price,
         ]);
