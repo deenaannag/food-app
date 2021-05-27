@@ -11,30 +11,7 @@
 <form action="signup" method="post">
 @csrf
 
-<!--<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #5E5A80;">
 
-  <div class="container-fluid">
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="/login">login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">SignUp</a>
-        </li>
-        <a class="navbar-brand" style="padding-left:900px;" href="">Mess Managemenet System</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      </ul>
-    </div>
-  </div>
-</nav>-->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #5E5A80;">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">

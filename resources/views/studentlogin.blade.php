@@ -71,7 +71,7 @@
         <table class="table table-borderless">
         
         <tr>
-            <td>UserName:</td>
+            <td>Email-ID:</td>
             <td><input type="text" name="email" class="form-control"></td>
             @error('username'){{$message}}@enderror
         </tr>

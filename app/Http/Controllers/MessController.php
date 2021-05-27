@@ -22,7 +22,10 @@ class MessController extends Controller
 
     public function login(Request $req)
     {
-        //return 1;
+        $req->validate([
+           'email'=>'required',
+           'password'=>'required|min:5|max:12'
+           ]);
 
         $email=$req->email;
 	    $password=$req->password;
@@ -100,7 +103,7 @@ class MessController extends Controller
             $food->foodname=$req->foodname;
             $food->itemno=$req->itemno;
             $food->price=$req->price;
-            //$food->image=$req->image;
+
               $file = $req->image;
              $destinationPath = 'uploads/';
              $extenstion = strtolower($file->getClientOriginalExtension());
@@ -112,18 +115,7 @@ class MessController extends Controller
              $file->move($destinationPath, $file_name);
              $food->image=$file_name; 
 
-              /*  if ($req->hasfile('image')){
-                $file=$req->file('image');
-                $extension=$file->getClientOriginalExtension();
-                $filename=time() . "." . $extension;
-                $file->move('uploads/food/',filename);
-                $food->image=$filename;
-            }
-            else{
-                return $req;
-                $food->image= '';
-            } 
-               */
+              
             $food->save();
             return back()->with('success','successfully registered');
     }
@@ -135,11 +127,8 @@ class MessController extends Controller
     public function addfoodview()
     {
         $data=DB::table("addfoods")->get();
-        //return $data;
         return view('Admin',compact('data'));
-        //$data=addfood::all();
-        //return view('addfood',['data'=>$data]);
-        //return view('addfood')->with('data',$data);
+        
     }
     function deletefood($id)
     {
@@ -165,9 +154,8 @@ class MessController extends Controller
     function student()
     {
          $data=DB::table("addfoods")->get();
-        //return $data;
-        return view('student',compact('data'));
-        //return view('student');
+         return view('student',compact('data'));
+        
        
     }
     
@@ -180,10 +168,7 @@ class MessController extends Controller
         return view('adminorder');
     }
 
-    // function order()
-    // {
-    //     return view('order');
-    // }
+   
 
     //Order food
     public function order_food(Request $req,$id)
@@ -218,11 +203,7 @@ class MessController extends Controller
                     ->select('bookings.*','signups.username')
                     ->get();
             return view('adminorder',compact('orderlist'));
-        /* $users = DB::table('users')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.*', 'contacts.phone', 'orders.price')
-            ->get(); */
+        
         
     }
 }

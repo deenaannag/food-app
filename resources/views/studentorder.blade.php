@@ -56,9 +56,7 @@
                     <th scope="col">Order date</th>
                     <th scope="col">ItemNo</th>
                     <th scope="col">Price(Rs)</th>
-                    <!-- <th scope="col">Quantity</th> -->
-                    <!-- <th scope="col">Total Price</th> -->
-            
+                   
                   </tr>
                 </thead>
                 <tbody>
