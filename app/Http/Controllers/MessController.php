@@ -37,23 +37,23 @@ class MessController extends Controller
                         $data=DB::table("addfoods")->get();
                         return view('Admin',compact('data'));
         }
-        else
+        else if(Auth::attempt(['email'=>$email,'password'=>$password]))
         {
-            if(Auth::attempt(['email'=>$email,'password'=>$password])){
+           
                 //return 1;
-                $users = Auth::user();
-                $req->session()->put('login_id',$users->id);
+                // $users = Auth::user();
+                // $req->session()->put('login_id',$users->id);
                 
-               if(Auth::user()->usertpe=="user"){
+               //if(Auth::user()->usertpe=="user"){
                 $data=DB::table("addfoods")->get();
                 return view('student',compact('data'));
-                }
-                else{
-                    echo "invalid";
-                }
+                // }
+                // else{
+                //     echo "invalid";
+                // }
         
         }
-
+    }    
 	//   if(Auth::attempt(['email'=>$email,'password'=>$password])){
     //     //return 1;
     //     $users = Auth::user();
@@ -130,7 +130,7 @@ class MessController extends Controller
         else{
             return back()->with('fail','something wrong');
         }
-        
+    }    
     
 
     function food(Request $req)
@@ -245,7 +245,9 @@ class MessController extends Controller
                     ->where('signups.login_id','=','bookings.orderno')
                     ->get();
             return view('adminorder',compact('orderlist'));
-        
-        
-    }
+    }   
+
 }
+        
+    
+
