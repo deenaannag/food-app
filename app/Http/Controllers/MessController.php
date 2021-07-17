@@ -49,7 +49,7 @@ class MessController extends Controller
                 return view('student',compact('data'));
                 }
                 else{
-                    echo "invalid";
+                    echo("invalid");
                 }
         
         }
