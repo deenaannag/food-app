@@ -64,7 +64,7 @@ class MessController extends Controller
        
    
 
-    }
+    
 
     function register(Request $req)
           {
