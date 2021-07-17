@@ -209,7 +209,7 @@ class MessController extends Controller
    
 
     //Order food
-    public function order_food(Request $req,$id)
+     function order_food(Request $req,$id)
     {
         $order_no=$req->session()->get('login_id');
         $food=addfood::where('id',$id)->first();
@@ -225,7 +225,7 @@ class MessController extends Controller
 
     //studentorder List
 
-    public function studentorders(Request $req)
+     function studentorders(Request $req)
     {
         $order_no=$req->session()->get('login_id');
          $orders=Booking::where('bookings.orderno',$order_no)->get();
@@ -235,7 +235,7 @@ class MessController extends Controller
 
     //admin view order list
 
-    public function adminorderlist()
+    function adminorderlist()
     {
        $orderlist=DB::table('bookings')
                     ->join('signups','bookings.orderno','=','signups.login_id')
