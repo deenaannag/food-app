@@ -85,7 +85,7 @@ class MessController extends Controller
         // {
         //     echo "invalid";
         // }
-}
+
 
 
        
@@ -131,9 +131,9 @@ class MessController extends Controller
             return back()->with('fail','something wrong');
         }
         
-    }
+    
 
-    function food(Request $req)
+    public function food(Request $req)
           {
             $req->validate([
                 'itemno'=>'required|numeric|unique:addfoods',
@@ -248,5 +248,4 @@ class MessController extends Controller
         
         
     }
-}
 }
