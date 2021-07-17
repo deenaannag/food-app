@@ -244,7 +244,7 @@ class MessController extends Controller
     function adminorderlist()
     {
        $orderlist=DB::table('bookings')
-                    ->join('signups','bookings.orderno','=','signups.login_id')
+                    ->join('signups','bookings.orderno','=','signups.id')
                     //->where('signups.login_id','=','bookings.orderno')
                     ->get();
             return view('adminorder',compact('orderlist'));
