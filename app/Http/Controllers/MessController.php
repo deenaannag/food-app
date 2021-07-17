@@ -133,7 +133,7 @@ class MessController extends Controller
         
     }
 
-    function addfood(Request $req)
+    function food(Request $req)
           {
             $req->validate([
                 'itemno'=>'required|numeric|unique:addfoods',
@@ -162,7 +162,7 @@ class MessController extends Controller
     }
     function Admin()
     {
-        return view('admin');
+        return view('Admin');
     }
 
     function addfoodview()
