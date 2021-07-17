@@ -29,6 +29,28 @@ class MessController extends Controller
 
         $email=$req->email;
 	    $password=$req->password;
+
+        if($email=="deena@gmail.com" && $password=="123456")
+        {
+            
+                        return redirect('addfoodview');
+        }
+        else
+        {
+            if(Auth::attempt(['email'=>$email,'password'=>$password])){
+                //return 1;
+                $users = Auth::user();
+                $req->session()->put('login_id',$users->id);
+                
+               if(Auth::user()->usertpe=="user"){
+                    return redirect('student');
+                }
+                else{
+                    echo "invalid";
+                }
+        
+        }
+
 	//   if(Auth::attempt(['email'=>$email,'password'=>$password])){
     //     //return 1;
     //     $users = Auth::user();
@@ -43,22 +65,23 @@ class MessController extends Controller
     //     else{
     //         echo "invalid";
     //     }
-        if($email=="deena@gmail.com" && $password=="123456")
-        {
-            $users = Auth::user();
-            $req->session()->put('login_id',1);
-            if(Auth::user()->usertpe=="user"){
-                        return redirect('student');
-                    }
-            else
-            {
-                return redirect("addfoodview");
-            }
-        }
-        else
-        {
-            echo "invalid";
-        }
+
+        // if($email=="deena@gmail.com" && $password=="123456")
+        // {
+        //     $users = Auth::user();
+        //     $req->session()->put('login_id',1);
+        //     if(Auth::user()->usertpe=="user"){
+        //                 return redirect('student');
+        //             }
+        //     else
+        //     {
+        //         return redirect("addfoodview");
+        //     }
+        // }
+        // else
+        // {
+        //     echo "invalid";
+        // }
 }
 
 
