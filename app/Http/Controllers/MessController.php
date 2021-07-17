@@ -160,8 +160,11 @@ class MessController extends Controller
              $food->image=$file_name; 
 
               
-            $food->save();
-            return back()->with('success','successfully registered');
+            $s=$food->save();
+            if($s)
+            return redirect('addfoodview')->with('success','successfully added');
+            else
+            return bredirect('addfoodview')->with('fail','item not added');
     }
     function Admin()
     {
