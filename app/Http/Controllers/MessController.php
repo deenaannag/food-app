@@ -133,13 +133,13 @@ class MessController extends Controller
         
     }
 
-    function addfood(Request $req)
+   public function addfood(Request $req)
           {
             $req->validate([
                 'itemno'=>'required|numeric|unique:addfoods',
                 
             ]);
-            $food=new addfood;
+            $food=new addfood();
 
             $food->foodname=$req->foodname;
             $food->itemno=$req->itemno;
