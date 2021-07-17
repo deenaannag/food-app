@@ -41,16 +41,16 @@ class MessController extends Controller
         {
            
                 //return 1;
-                // $users = Auth::user();
-                // $req->session()->put('login_id',$users->id);
+                $users = Auth::user();
+                $req->session()->put('login_id',$users->id);
                 
-               //if(Auth::user()->usertpe=="user"){
+               if(Auth::user()->usertpe=="user"){
                 $data=DB::table("addfoods")->get();
                 return view('student',compact('data'));
-                // }
-                // else{
-                //     echo "invalid";
-                // }
+                }
+                else{
+                    echo "invalid";
+                }
         
         }
     }    
