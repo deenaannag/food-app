@@ -33,7 +33,7 @@ Route::post('login',[MessController::class,'login']);
 Route::view('signup','signup');
 Route::post('signup',[MessController::class,'register']);
 Route::post('/addfood',[MessController::class,'addfood']);
-Route::get('/', [Messcontroller::class,'index']);
+Route::get('/', [MessController::class,'index']);
 
 
 Route::get('addfoodview',[MessController::class,'addfoodview']);
