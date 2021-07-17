@@ -33,8 +33,8 @@ class MessController extends Controller
         if($email=="deena@gmail.com" && $password=="123456")
         {
             
-                        return redirect('addfoodview');
-        }
+                        //return redirect('addfoodview');
+                        return view('admin');
         else
         {
             if(Auth::attempt(['email'=>$email,'password'=>$password])){
