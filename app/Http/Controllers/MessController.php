@@ -35,6 +35,7 @@ class MessController extends Controller
             
                         //return redirect('addfoodview');
                         return view('admin');
+        }
         else
         {
             if(Auth::attempt(['email'=>$email,'password'=>$password])){
@@ -245,5 +246,4 @@ class MessController extends Controller
         
         
     }
-}
 }
