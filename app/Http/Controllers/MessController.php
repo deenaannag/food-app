@@ -46,7 +46,7 @@ class MessController extends Controller
         if($email=="deena@gmail.com" && $password=="123456")
         {
             $users = Auth::user();
-            $req->session()->put('login_id',$users->id);
+            $req->session()->put('login_id',1);
             if(Auth::user()->usertpe=="admin"){
                         return redirect("addfoodview");
                     }
