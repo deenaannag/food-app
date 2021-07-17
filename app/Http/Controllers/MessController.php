@@ -83,7 +83,7 @@ class MessController extends Controller
          $reg->createpassword=Hash::make($req->createpassword);
       
          $reg->save();
-         return back()->with('sucess','sucessfully registered');
+         return back()->with('sucess','sucessfully registered and Now u can Login');
         
         }
         else{
@@ -190,7 +190,9 @@ class MessController extends Controller
     public function studentorders(Request $req)
     {
         $order_no=$req->session()->get('login_id');
-         $orders=Booking::where('orderno',$order_no)->get();
+         $orders=Booking::join("addfoods","addfoods.itemno","=","bookings.itemno")
+         ->where('bookings.orderno',$order_no)->get();
+
         return view('studentorder',compact('orders'));
     }
 
@@ -199,8 +201,9 @@ class MessController extends Controller
     public function adminorderlist()
     {
        $orderlist=DB::table('bookings')
+                    ->join("addfoods","addfoods.itemno","=","bookings.itemno")
                     ->join('signups','bookings.orderno','=','signups.login_id')
-                    ->select('bookings.*','signups.username')
+                    //->where('signups.login_id','=','bookings.orderno')
                     ->get();
             return view('adminorder',compact('orderlist'));
         

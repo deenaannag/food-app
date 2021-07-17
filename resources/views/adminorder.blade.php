@@ -56,7 +56,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">OrderNo</th>
                 <th scope="col">Order date</th>
-                <th scope="col">ItemNo</th>
+                <th scope="col">Food name</th>
                 <th scope="col">Price(Rs)</th>
                 <!-- <th scope="col">Quantity</th> -->
                 <!-- <th scope="col">Total Price</th> -->
@@ -70,7 +70,7 @@
               <td>{{$order->id}}</td>
               <td>{{$order->orderno}}</td>
               <td>{{$order->orderdate}}</td>
-              <td>{{$order->itemno}}</td>
+              <td>{{$order->foodname}}</td>
               <td>{{$order->price}}</td>
               <td>{{$order->username}}</td>
               </tr>
@@ -80,3 +80,4 @@
           
 </body>
 </html>
+

@@ -45,42 +45,47 @@
    </div>
    <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
    <h3>Student Registration</h3>
+   @if(Session::get('sucess'))
+                  <div class="alert alert-success">
+                  {{ Session::get('sucess') }}
+                  </div>
+   @endif
    @csrf
    <table class="table table-borderless">
    
    <tr>
        <td>UserName:</td>
-       <td><input type="text" class="form-control" name="username"></td>
-       @error('username'){{$message}}@enderror
+       <td><input type="text" class="form-control" name="username">@error('username'){{$message}}@enderror</td>
+       
    </tr>
    <tr>
        <td>Email-id:</td>
-       <td><input type="text" class="form-control" name="email"></td>
-       @error('email'){{$message}}@enderror
+       <td><input type="text" class="form-control" name="email">@error('email'){{$message}}@enderror</td>
+       
    </tr>
    <tr>
        <td>Mobile:</td>
-       <td><input type="text" class="form-control" name="mobile"></td>
-       @error('mobile'){{$message}}@enderror
+       <td><input type="text" class="form-control" name="mobile">@error('mobile'){{$message}}@enderror</td>
+       
    </tr>
    <tr>
        <td>Address:</td>
-       <td><input type="text" class="form-control" name="address"></td>
-       @error('address'){{$message}}@enderror
+       <td><input type="text" class="form-control" name="address"> @error('address'){{$message}}@enderror</td>
+      
    </tr>
    <tr>
        <td>Password:</td>
-       <td><input type="password" class="form-control" name="password"></td>
-       @error('password'){{$message}}@enderror
+       <td><input type="password" class="form-control" name="password">@error('password'){{$message}}@enderror</td>
+       
    </tr>
    <tr>
        <td>Confirm Password:</td>
-       <td><input type="password" class="form-control" name="createpassword"></td>
-       @error('createpassword'){{$message}}@enderror
+       <td><input type="password" class="form-control" name="createpassword">@error('createpassword'){{$message}}@enderror</td>
+       
    </tr>
    <tr>
        <td></td>
-       <td><button class="btn btn-success">SIGNUP</button></td>
+       <td><button class="btn btn-success" >SIGNUP</button></td>
    </tr>
    </table>
    </div>
