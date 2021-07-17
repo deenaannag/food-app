@@ -47,12 +47,13 @@ class MessController extends Controller
         {
             $users = Auth::user();
             $req->session()->put('login_id',1);
-            if(Auth::user()->usertpe=="admin"){
-                        return redirect("addfoodview");
-                    }
-                    else if(Auth::user()->usertpe=="user"){
+            if(Auth::user()->usertpe=="user"){
                         return redirect('student');
                     }
+            else
+            {
+                return redirect("addfoodview");
+            }
         }
         else
         {
