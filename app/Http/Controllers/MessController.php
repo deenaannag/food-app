@@ -162,7 +162,7 @@ class MessController extends Controller
         return view('admin');
     }
 
-    public function addfoodview()
+    function addfoodview()
     {
         $data=DB::table("addfoods")->get();
         return view('Admin',compact('data'));
