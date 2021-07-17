@@ -47,7 +47,7 @@
     </div>
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
     <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFood Menu</h3>
-    <form action="/addfood" method="post" enctype="multipart/form-data" >
+    <form action="{{ route('addfood') }}" method="post" enctype="multipart/form-data" >
  
     {{csrf_field()}}
     <table class="table table-borderless">

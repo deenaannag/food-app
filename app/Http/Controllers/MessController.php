@@ -20,7 +20,7 @@ class MessController extends Controller
         return view('index');
     }
 
-    public function login(Request $req)
+     function login(Request $req)
     {
         $req->validate([
            'email'=>'required',
