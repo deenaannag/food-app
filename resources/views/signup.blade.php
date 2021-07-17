@@ -45,11 +45,7 @@
    </div>
    <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
    <h3>Student Registration</h3>
-   @if(Session::get('sucess'))
-                  <div class="alert alert-success">
-                  {{ Session::get('sucess') }}
-                  </div>
-   @endif
+   
    @csrf
    <table class="table table-borderless">
    

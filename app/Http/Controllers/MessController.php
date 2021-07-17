@@ -49,9 +49,12 @@ class MessController extends Controller
                 return view('student',compact('data'));
                 }
                 else{
-                    echo("invalid");
+                    return back()->with('fail',"Invalid User");
                 }
         
+        }
+        else{
+            return back()->with('fail',"Invalid User");
         }
     }    
 	//   if(Auth::attempt(['email'=>$email,'password'=>$password])){

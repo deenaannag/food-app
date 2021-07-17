@@ -60,11 +60,17 @@
 
   </div>
 </nav>
+
     <div class="container">
         <div class="row">
         <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
         </div>
         <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
+        @if(Session::get('fail'))
+                  <div class="alert alert-warning">
+                  {{ Session::get('fail') }}
+                  </div>
+         @endif
         <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Login </h3>
         {{csrf_field()}}
       
