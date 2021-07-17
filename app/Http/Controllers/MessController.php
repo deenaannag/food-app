@@ -34,7 +34,8 @@ class MessController extends Controller
         {
             
                         //return redirect('addfoodview');
-                        return view('Admin');
+                        $data=DB::table("addfoods")->get();
+                        return view('Admin',compact('data'));
         }
         else
         {
@@ -44,7 +45,8 @@ class MessController extends Controller
                 $req->session()->put('login_id',$users->id);
                 
                if(Auth::user()->usertpe=="user"){
-                    return view('student');
+                $data=DB::table("addfoods")->get();
+                return view('student',compact('data'));
                 }
                 else{
                     echo "invalid";
