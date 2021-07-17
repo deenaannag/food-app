@@ -9,8 +9,7 @@
 </head>
 <body background="https://png.pngtree.com/back_origin_pic/05/07/23/e53e2138838b60dcb17edf89de0878e3.jpg">
 
-<form action="addfood" method="post" enctype="multipart/form-data" >
-  @csrf
+
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #5E5A80;">
             <div class="container-fluid">
@@ -48,7 +47,8 @@
     </div>
     <div class="col col-12 col-sm-4 col-md-4 col-lg-4">
     <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFood Menu</h3>
-     
+    <form action="/addfood" method="post" enctype="multipart/form-data" >
+ 
     {{csrf_field()}}
     <table class="table table-borderless">
     

@@ -22,7 +22,7 @@ use App\Http\Controllers\MessController;
 Route::view('/','index');
 Route::view('login','studentlogin');
 Route::view('admin','admin');
-Route::view('addfood','admin');
+// Route::view('addfood','admin');
 Route::view('student','student');
 //Route::view('student','student');
 //Route::view('studentorder','studentorder');
@@ -32,7 +32,7 @@ Route::view('register','signup');
 Route::post('login',[MessController::class,'login']);
 Route::view('signup','signup');
 Route::post('signup',[MessController::class,'register']);
-Route::post('addfood',[MessController::class,'addfood']);
+Route::post('/addfood',[MessController::class,'addfood']);
 Route::get('/', [Messcontroller::class,'index']);
 
 
